@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Memory Matching Game</title>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@400;600;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header>
+    <span class="eyebrow">Card Game</span>
+    <h1>Memory Match</h1>
+  </header>
+
+  <div class="controls">
+    <div class="stat-box">
+      <span class="label">Time</span>
+      <span class="value" id="timer">0s</span>
+    </div>
+    <div class="stat-box">
+      <span class="label">Moves</span>
+      <span class="value" id="moves">0</span>
+    </div>
+    <div class="divider"></div>
+    <select id="difficulty">
+      <option value="6">Easy — 6 pairs</option>
+      <option value="8" selected>Medium — 8 pairs</option>
+      <option value="12">Hard — 12 pairs</option>
+    </select>
+    <button class="btn-restart" id="restartBtn">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/>
+        <path d="M3 3v5h5"/>
+      </svg>
+      New Game
+    </button>
+  </div>
+
+  <div class="progress-wrap">
+    <div class="progress-bar">
+      <div class="progress-fill" id="progressFill"></div>
+    </div>
+    <span class="progress-label" id="progressLabel">0 / 0</span>
+  </div>
+
+  <div id="grid"></div>
+
+  <!-- Win Modal -->
+  <div class="overlay" id="overlay">
+    <div class="modal">
+      <span class="trophy">🏆</span>
+      <h2>You won!</h2>
+      <p class="sub">All pairs matched</p>
+      <div class="rating-badge" id="ratingBadge">⭐⭐⭐ Perfect</div>
+      <div class="modal-stats">
+        <div class="modal-stat">
+          <div class="ms-label">Time</div>
+          <div class="ms-val" id="finalTime">0s</div>
+        </div>
+        <div class="modal-stat">
+          <div class="ms-label">Moves</div>
+          <div class="ms-val" id="finalMoves">0</div>
+        </div>
+      </div>
+      <button class="btn-play-again" id="playAgainBtn">Play Again</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
